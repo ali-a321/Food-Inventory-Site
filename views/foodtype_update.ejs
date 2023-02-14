@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="headerTitle"><%= title %></h1>
+   <div class="mainContainer">
+    <%-include("./layout.ejs")%>
+
+    <div class="contentContainer-list">
+        <a href="/">  Back</a>
+        <div> 
+        <p> Current Food Group Name: <strong> <%= foodtype.description %>  </strong><br>
+        Update Food Group name in the input box below. </p>
+      </div>
+        <form method="POST" action=" ">
+           <div> <label for = "description"> Food Group </label> </div>
+           <div> <input type="text" name="description" id="description" placeholder="Meat, Fruits, Dairy, etc" required maxlength="25" minlength="2" > </div>
+           <div> <button type="submit" value="Submit" class="submitBtn"> Submit</button> </div>
+        </form>
+       
+    </div>
+    </div>
+
+  </body>
+</html>

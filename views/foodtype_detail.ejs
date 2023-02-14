@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="headerTitle"><%= title %></h1>
+   <div class="mainContainer">
+    <%-include("./layout.ejs")%>
+
+    <div class="contentContainer">
+        <ul>
+          <h3> <%= foodtype.description %> </h3>
+        <% if (foodtype_foods.length) { %>
+        <% foodtype_foods.forEach((food) => { %>
+            <li class="foodList-info"> <a href= <%= food.url %> class="foodList"> <%= food.name %> <br>  </a> <span class="summarytxt"> <%= food.summary %> </span></li> 
+        <% })} else { %>
+            <li> We do not have any foods/drinks of this food group in our inventory at this time. Please check again another day! </li>
+        <%} %> 
+        <div class="btnContainer"> 
+          <div> <a href= <%= foodtype.url+'/delete' %> class="foodList"> Delete Food Group </a> </div>
+          <div> <a href= <%= foodtype.url+'/update' %> class="foodList"> Update Food Group Name </a> </div> 
+          </div> 
+      </ul>
+       
+    </div>
+    </div>
+
+  </body>
+</html>

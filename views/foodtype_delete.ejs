@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="headerTitle"><%= title %></h1>
+   <div class="mainContainer">
+    <%-include("./layout.ejs")%>
+
+    <div class="contentContainer">
+        <ul>
+          <h3> <%= foodtype.description %> </h3>
+          <% if (foodtype_foods.length) { %>
+            <p> Delete the following foods before deleting the food group.</p>
+            <% foodtype_foods.forEach((food) => { %>
+                <li class="foodList-info"> <a href= <%= food.url %> class="foodList"> <%= food.name %> <br>  </a> </li> 
+            <% })} else { %>
+              <form method="POST" action=" ">
+                <div> <input type="hidden" name="foodtypeid" id="foodtypeid" value = "<%= foodtype._id %>" required > </div>
+                <div> <button type="submit" value="Submit" class="submitBtn"> Delete Food Group</button> </div>
+             </form> 
+            <%} %> 
+        
+ 
+      </ul>
+       
+    </div>
+    </div>
+
+  </body>
+</html>
+

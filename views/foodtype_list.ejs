@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="headerTitle"><%= title %></h1>
+   <div class="mainContainer">
+    <%-include("./layout.ejs")%>
+
+    <div class="contentContainer">
+        <ul>
+        <% if (foodtype_list.length) { %>
+        <% foodtype_list.forEach((foodtype) => { %>
+            <li class="foodList"> <a href= <%= foodtype.url %> class="foodList"> <%= foodtype.description %> </a> </li> 
+        <% })} else { %>
+            <li> There are no food groups </li>
+        <%} %> 
+       </ul>
+    </div>
+    </div>
+
+  </body>
+</html>

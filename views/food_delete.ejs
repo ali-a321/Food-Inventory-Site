@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="headerTitle"><%= title %></h1>
+   <div class="mainContainer">
+    <%-include("./layout.ejs")%>
+
+    <div class="contentContainer-list">
+        <div> <%= food.name %> </div>
+        <div> Price: $ <%= food.price %> </div>
+        <div> Quantity: <%= food.amount %> </div>
+        <form method="POST" action=" ">
+            <div> <input type="hidden" name="foodid" id="foodid" value = "<%= food._id %>" required > </div>
+            <div> <button type="submit" value="Submit" class="submitBtn"> Delete Food</button> </div>
+         </form> 
+    </div>
+    </div>
+
+  </body>
+</html>

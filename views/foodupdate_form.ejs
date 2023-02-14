@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="headerTitle"><%= title %></h1>
+   <div class="mainContainer">
+    <%-include("./layout.ejs")%>
+
+    <div class="contentContainer-list">
+        <form method="POST" action=" ">
+           <div> <label for = "name"> Food Name: </label> </div>
+           <div> <input type="text" name="name" id="name" placeholder="Apple, Cashews, Steak, etc" required value= "<%= food.name %>"  > </div>
+           <div> <label for = "summary"> Food description: </label> </div>
+           <div> <textarea type="text" name="summary" id="summary" placeholder="Apple is a xyz" required > <%= food.summary %></textarea> </div>
+           <div> <label for = "price"> Price: </label> </div>
+           <div> <input type="number" name="price" id="price" placeholder="Type a number" required value= "<%= food.price %>" > </div>
+           <div> <label for = "amount"> Quantity: </label> </div>
+           <div> <input type="number" name="amount" id="amount" placeholder="Type a number" required value= "<%= food.amount %>"  > </div>
+           <div> <label for = "foodtype"> Food group: </label> </div>
+           <div>   
+              <% for (var i = 0; i < foodtypes.length; i++) { %>
+              <div>
+                <% let checked = foodtypes[i].checked ? "checked" : "" %>
+                <input type = "checkbox" name="foodtype" id= <%= foodtypes[i]._id %>  <%= checked %>  value= <%= foodtypes[i]._id %>  >
+                <%= foodtypes[i].description %>
+              </div>
+              <% } %>  
+            </div>
+           <div> <button type="submit" value="Submit" class="submitBtn"> Update</button> </div>
+        </form>
+       
+    </div>
+    </div>
+
+  </body>
+</html>
+

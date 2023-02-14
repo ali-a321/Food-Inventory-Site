@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="headerTitle"><%= name %> </h1>
+   <div class="mainContainer">
+    <%-include("./layout.ejs")%>
+
+    <div class="contentContainer-list">
+        <div> <%= food.summary %> </div>
+        <div> Price: $ <%= food.price %> </div>
+        <div> Quantity: <%= food.amount %> </div>
+        <% foodtype.forEach((food) => { %>
+            <div> Food Group: <%= food.description %> </div> 
+        <% }) %>
+        <div class="btnContainer"> 
+        <div> <a href= <%= food.url+'/delete' %> class="foodList"> Delete Food </a> </div>
+        <div> <a href= <%= food.url+'/update' %> class="foodList"> Update Food Information </a> </div> 
+        </div>
+      </div>
+     
+    </div>
+
+  </body>
+</html>
