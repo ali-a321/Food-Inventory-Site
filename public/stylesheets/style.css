@@ -1,0 +1,63 @@
+body {
+margin: 0;
+  font: 1rem "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.headerTitle{
+  display: flex;
+  justify-content: center;
+}
+.sidebar-nav {
+
+  padding: 0;
+  list-style: none;
+}
+li{
+  list-style: none;
+}
+.mainContainer{
+  display: flex;
+  align-items: center;
+}
+.contentContainer{
+display: flex;
+justify-content: center;
+margin-left: 1rem;
+margin-right: 1rem;
+}
+.contentContainer-list{
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.side{
+ margin-left: 2rem;
+ max-width: 20vw;
+ min-width: 20vw;
+}
+.foodList{
+  list-style: circle;
+  text-decoration: none;
+  font-weight: bold;
+}
+.sidebar-add{
+  border-top: 1px solid black;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+a{
+  text-decoration: none;
+}
+.btnContainer{
+  margin-top: 2rem;
+}
+.summarytxt{
+  font-weight: normal;
+  
+}
+.foodList-info{
+  margin-top: 8px;
+}
